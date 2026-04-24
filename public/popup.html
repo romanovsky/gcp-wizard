@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GCP Wizard</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GCP Wizard</h1>
+      <button id="openOptions" type="button" title="Settings">⚙︎</button>
+    </header>
+
+    <form id="gsForm" autocomplete="off">
+      <label for="gsPath">gs:// path</label>
+      <input
+        id="gsPath"
+        name="gsPath"
+        type="text"
+        placeholder="gs://bucket-name/path/to/object"
+        spellcheck="false"
+        autofocus
+        required
+      />
+
+      <label for="project">Project ID (optional)</label>
+      <input
+        id="project"
+        name="project"
+        type="text"
+        placeholder="wmt-adtech-reporting-dev"
+        spellcheck="false"
+      />
+
+      <div class="actions">
+        <button id="openBtn" type="submit">Open in Console</button>
+      </div>
+
+      <p id="status" class="status" role="status"></p>
+    </form>
+
+    <footer>
+      <small>Tip: type <code>gs</code> in the address bar, hit <kbd>Tab</kbd>, then paste a <code>gs://</code> path.</small>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

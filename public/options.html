@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GCP Wizard — Options</title>
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      body { width: 420px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GCP Wizard — Options</h1>
+    </header>
+
+    <form id="optionsForm" autocomplete="off">
+      <label for="defaultProject">Default Project ID</label>
+      <input
+        id="defaultProject"
+        name="defaultProject"
+        type="text"
+        placeholder="wmt-adtech-reporting-dev"
+        spellcheck="false"
+      />
+
+      <div class="actions">
+        <button type="submit">Save</button>
+      </div>
+
+      <p id="status" class="status" role="status"></p>
+    </form>
+
+    <footer>
+      <small>The default project is appended as <code>?project=...</code> when you don't provide one explicitly.</small>
+    </footer>
+
+    <script src="options.js"></script>
+  </body>
+</html>
