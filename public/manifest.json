@@ -5,6 +5,15 @@
   "description": "Shortcuts to navigate directly to gs:// paths in the Google Cloud Console.",
   "minimum_chrome_version": "120",
   "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
   "action": {
     "default_title": "GCP Wizard — Open a gs:// path",
     "default_popup": "popup.html",

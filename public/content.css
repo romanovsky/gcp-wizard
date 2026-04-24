@@ -1,0 +1,53 @@
+/*
+ * Copyright 2026 Sergey Romanovskiy
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Styles injected by the GCP Wizard content script.
+ * Scope: every element with class .gcp-wizard-gs-link
+ */
+
+.gcp-wizard-gs-link {
+  /* Inherit the surrounding font so the link blends into code blocks,
+     log lines, tables, etc. */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  color: #1a73e8;           /* Google blue — matches the Cloud Console */
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 0 1px;
+
+  /* Don't break the line layout of the host page. */
+  display: inline;
+  white-space: inherit;
+}
+
+.gcp-wizard-gs-link:hover {
+  color: #0d47a1;
+  text-decoration: underline solid;
+  background-color: rgba(26, 115, 232, 0.08);
+  outline: none;
+}
+
+.gcp-wizard-gs-link:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 1px;
+}
+
+/* Dark-mode support — picks up the OS/browser preference even on pages
+   that don't declare their own dark theme. */
+@media (prefers-color-scheme: dark) {
+  .gcp-wizard-gs-link {
+    color: #8ab4f8;
+  }
+  .gcp-wizard-gs-link:hover {
+    color: #aecbfa;
+    background-color: rgba(138, 180, 248, 0.12);
+  }
+  .gcp-wizard-gs-link:focus-visible {
+    outline-color: #8ab4f8;
+  }
+}
