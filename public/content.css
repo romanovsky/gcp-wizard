@@ -2,8 +2,10 @@
  * Copyright 2026 Sergey Romanovskiy
  * SPDX-License-Identifier: Apache-2.0
  *
- * Styles injected by the GCP Wizard content script.
- * Scope: every element with class .gcp-wizard-gs-link
+ * Styles injected by GCP Wizard content scripts.
+ * Scopes:
+ *   .gcp-wizard-gs-link  — gs:// links added by content.ts
+ *   .gcp-wizard-log-btn  — "View log" pill added by dataproc.ts
  */
 
 .gcp-wizard-gs-link {
@@ -48,6 +50,58 @@
     background-color: rgba(138, 180, 248, 0.12);
   }
   .gcp-wizard-gs-link:focus-visible {
+    outline-color: #8ab4f8;
+  }
+}
+
+/* ── "📄 View log" pill button (dataproc.ts) ──────────────────────────── */
+
+.gcp-wizard-log-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 6px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+
+  color: #1a73e8;
+  background: rgba(26, 115, 232, 0.1);
+  border: 1px solid rgba(26, 115, 232, 0.35);
+  border-radius: 4px;
+  padding: 2px 7px;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.gcp-wizard-log-btn:hover {
+  background: rgba(26, 115, 232, 0.18);
+  border-color: #1a73e8;
+  color: #0d47a1;
+  text-decoration: none;
+}
+
+.gcp-wizard-log-btn:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gcp-wizard-log-btn {
+    color: #8ab4f8;
+    background: rgba(138, 180, 248, 0.1);
+    border-color: rgba(138, 180, 248, 0.3);
+  }
+  .gcp-wizard-log-btn:hover {
+    background: rgba(138, 180, 248, 0.18);
+    border-color: #8ab4f8;
+    color: #aecbfa;
+  }
+  .gcp-wizard-log-btn:focus-visible {
     outline-color: #8ab4f8;
   }
 }

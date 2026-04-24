@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GCP Wizard — Log Viewer</title>
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <span class="badge">GCP Wizard</span>
+        <h1 id="title">Loading…</h1>
+        <p id="subtitle"></p>
+      </div>
+      <div class="header-actions">
+        <button id="rawBtn" type="button" class="btn-ghost" title="Open raw file in a new tab (browser auth)">
+          ↗ Open raw
+        </button>
+        <button id="copyBtn" type="button" class="btn-ghost" title="Copy full log text to clipboard">
+          ⎘ Copy
+        </button>
+      </div>
+    </header>
+
+    <div id="status" class="status" role="status">Initialising…</div>
+
+    <div class="retry-row">
+      <button id="retryBtn" type="button" class="btn-primary" hidden>
+        ↺ Retry
+      </button>
+    </div>
+
+    <div id="log-container" hidden>
+      <pre id="log" class="log" aria-label="Log output"></pre>
+    </div>
+
+    <script src="viewer.js"></script>
+  </body>
+</html>

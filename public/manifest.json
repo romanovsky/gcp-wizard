@@ -4,13 +4,24 @@
   "version": "0.1.0",
   "description": "Shortcuts to navigate directly to gs:// paths in the Google Cloud Console.",
   "minimum_chrome_version": "120",
-  "permissions": ["storage", "tabs"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": ["storage", "tabs", "identity"],
+  "host_permissions": [
+    "<all_urls>",
+    "https://storage.googleapis.com/*"
+  ],
+  "oauth2": {
+    "scopes": ["https://www.googleapis.com/auth/devstorage.read_only"]
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"],
       "css": ["content.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://console.cloud.google.com/*"],
+      "js": ["dataproc.js"],
       "run_at": "document_idle"
     }
   ],
